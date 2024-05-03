@@ -87,6 +87,10 @@ const port = process.env.PORT ? process.env.PORT : 8000;
   app.get("/", (req, res) =>
     res.send(`<h1>Resimpli App ${env} environment</h1>`)
   );
+  
+  app.get("/test", (req, res) =>
+    res.send('<h2>Hello Admin <br> How Are You ?</h2>')
+  );
 
   // app.listen(port, () => console.log(`Backend is running on port ${port}`));
   app.listen(port, function () {
