@@ -9,8 +9,9 @@ import mongoose from "mongoose";
 /* development connection string */
 const databaseUrl = process.env.ATLAS_URL;
 
-console.log("DB URL:", databaseUrl);
+// console.log("DB URL:", databaseUrl);
 // Mongoose setup with server
+mongoose.set("strictQuery", false);
 mongoose.connect(
   databaseUrl,
   {
@@ -21,7 +22,7 @@ mongoose.connect(
   },
   (err) => {
     if (err) {
-      console.log("database not connected",err);
+      console.log("database not connected", err);
     } else {
       console.log("database connected");
     }
